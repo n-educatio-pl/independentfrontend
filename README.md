@@ -1,15 +1,15 @@
 Independent frontend workflow
 ================
-Fully automated frontend workflow independent from backend containing less, requirejs, grunt, bower, karma and jasmine among other things.
+Fully automated frontend workflow independent from backend web framework.
 --------
 
-Using this configuration you can use the less, requirejs, grunt, bower, karma, jasmine (and anything else you need) stack in your existing and new web applications, regardless of the backend framework you use.
+Using this configuration you can use the **less, requirejs, grunt, bower, karma, jasmine** (and anything else you need) stack in your existing and new web applications, regardless of the backend framework you use.
 Make the front-end develpers life easier!
 
 Credits
 -------
-This WORK was inspired by a great [Cool like Frontend Developer](https://github.com/knpuniversity/symfonycon-frontend) PROJECT
-and the presentation of the same title at SymfonyCon 2013.
+This work was inspired by a great [Cool like Frontend Developer](https://github.com/knpuniversity/symfonycon-frontend) presentation at SymfonyCon 2013.
+The bower.json, Gruntfile.js and package.json files are based on the original files.
 
 Goal
 -------
