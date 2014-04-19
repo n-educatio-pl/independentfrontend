@@ -1,6 +1,6 @@
 Independent frontend workflow
 ================
-Less, requirejs, grunt, bower, karma and jasmine
+Fully automated frontend workflow independent from backend containing less, requirejs, grunt, bower, karma and jasmine among other things.
 --------
 
 Using this configuration you can use the less, requirejs, grunt, bower, karma, jasmine (and anything else you need) stack in your existing and new web applications, regardless of the backend framework you use.
