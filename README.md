@@ -54,7 +54,7 @@ The preperation of the host machine comes down to the installation of the virtua
 -------------
 
 1. Ssh to the guest machine - from the project root (where the Vagrantfile is located) type `vagrant ssh`.
-2. You should connect to the guest machine. Go to /vagrant directory (it's your project root): `cd /vagrant`.
+2. You should connect to the guest machine. Go to example project directory : `cd /vagrant/example_staticpage`.
 3. Build you project by typing:
 ```
     bower install
