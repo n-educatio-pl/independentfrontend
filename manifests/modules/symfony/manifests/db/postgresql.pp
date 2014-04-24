@@ -1,7 +1,15 @@
 class symfony::db::postgresql {
 
+  package { "iptables-persistent": }
+
+  service { "iptables-persistent":
+    ensure => running,
+    require => Package["iptables-persistent"],
+  }
+
   package { "postgresql" :
     ensure => installed,
+    require => Service["iptables-persistent"],
   }
 
   class { 'postgresql::server':
