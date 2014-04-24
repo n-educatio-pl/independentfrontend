@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "manifests"
     puppet.manifest_file  = "site.pp"
-    puppet.module_path = ["modules", "manifests/modules"]
+    puppet.module_path = ["manifests/modules"]
   end
 
 end
