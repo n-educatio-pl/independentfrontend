@@ -1,29 +1,7 @@
 # Puppet & Vagrant
 /.vagrant
-/modules/*
-!modules/.gitkeep
 /.librarian/
 /.tmp/
-
-/web/bundles/
-/app/bootstrap*
-/app/cache/*
-/app/logs/*
-!app/logs/.gitkeep
-/vendor/
-/app/config/parameters.yml
-
-
-#js libraries
-/bower_components
-/node_modules
-/npm-debug.log
-
-#frontend assets
-/assets/js/vendor
-/assets/css
-!/assets/css/.gitkeep
-/web/assets
 
 #IDEs
 /.idea/

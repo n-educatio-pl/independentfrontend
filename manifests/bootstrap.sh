@@ -5,9 +5,17 @@ if [ ! -f /home/vagrant/.runforthefirsttime ]; then
     apt-get update # we have to update this list in order to connect to the repositories
     apt-get install -y ruby puppet # we need them to provision machine
     cd /vagrant # directory in sync with the project root directory on the host
-    puppet module install puppetlabs-apt -f -v 1.4.2
-    puppet module install puppetlabs-postgresql -f -v 3.3.3
-    puppet module install puppetlabs-nodejs -f -v 0.4.0
-    touch modules/.gitkeep # brings back the file the has been removed by installation above not to alter git repository
+
+    # Puppet modules
+    if ! `puppet module list | grep -q puppetlabs-postgresql`  ; then
+        puppet module install puppetlabs-postgresql -v 3.3.3
+    fi
+    if ! `puppet module list | grep -q puppetlabs-nodejs`  ; then
+        puppet module install puppetlabs-nodejs -v 0.4.0
+    fi
+    if ! `puppet module list | grep -q puppetlabs-apt`  ; then
+        puppet module install puppetlabs-apt
+    fi
+
     touch /home/vagrant/.runforthefirsttime # don't run it during the next launch
 fi
