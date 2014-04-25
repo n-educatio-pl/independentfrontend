@@ -1,4 +1,4 @@
-class symfony::db::mysql {
+class common::db::mysql {
   user { "mysql":
     ensure => present,
     require => Package["mysql-server"],
@@ -6,10 +6,7 @@ class symfony::db::mysql {
   package { "mysql-server" :
     ensure => installed
   }
-  package { "libapache2-mod-auth-mysql":
-    ensure => installed,
-    require => Package["apache2"],
-  }
+
   service { "mysql":
     ensure => running,
     enable => true,
@@ -18,5 +15,12 @@ class symfony::db::mysql {
       default => "mysql",
     },
     require => Package["mysql-server"],
+  }
+
+  exec { 'set-mysql-password':
+    unless  => 'mysqladmin -uroot -proot status',
+    command => "mysqladmin -uroot password root",
+    path    => ['/bin', '/usr/bin'],
+    require => Service['mysql'];
   }
 }
