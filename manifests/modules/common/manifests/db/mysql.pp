@@ -21,6 +21,14 @@ class common::db::mysql {
     unless  => 'mysqladmin -uroot -proot status',
     command => "mysqladmin -uroot password root",
     path    => ['/bin', '/usr/bin'],
-    require => Service['mysql'];
+    require => Service['mysql']
   }
+
+  exec { 'mysql-vagrant-user':
+    unless  => "mysql -uvagrant -pvagrant -e 'SELECT 1'",
+    command => "mysql -uroot -proot -e \"CREATE USER 'vagrant'@'localhost' IDENTIFIED BY 'vagrant';\" && mysql -uroot -proot -e \"GRANT ALL PRIVILEGES ON * . * TO 'vagrant'@'localhost';\"",
+    path    => ['/bin', '/usr/bin'],
+    require => Exec['set-mysql-password']
+  }
+
 }
