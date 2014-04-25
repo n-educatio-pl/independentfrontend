@@ -1,4 +1,11 @@
-class symfony::db::postgresql {
+class common::db::postgresql {
+
+  package { "iptables-persistent": }
+
+  service { "iptables-persistent":
+    ensure => running,
+    require => Package["iptables-persistent"],
+  }
 
   package { "iptables-persistent": }
 
