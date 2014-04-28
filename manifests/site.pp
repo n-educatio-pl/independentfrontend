@@ -1,4 +1,4 @@
 node default {
-#    include server
+    include server
     include spring
 }
