@@ -1,4 +1,4 @@
-class symfony::db::postgresql {
+class common::db::postgresql {
 
   package { "iptables-persistent": }
 
