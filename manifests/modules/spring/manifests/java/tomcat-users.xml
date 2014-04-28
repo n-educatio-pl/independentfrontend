@@ -8,7 +8,7 @@
   <role rolename="admin-gui"/>
   <role rolename="admin-script"/>
 
-  <user username="maven" password="maven" roles="manager-script,manager-jmx,manager-status"/>
+  <user username="maven" password="maven" roles="manager,manager-script,manager-jmx,manager-status"/>
   <user username="admin" password="admin" roles="tomcat,manager-gui,manager-script"/>
   <user username="tomcat" password="tomcat" roles="tomcat,admin,manager,manager-gui,manager-script"/>
 </tomcat-users>
