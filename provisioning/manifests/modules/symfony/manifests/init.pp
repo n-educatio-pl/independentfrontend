@@ -1,6 +1,9 @@
 class symfony {
+  include common::db::mysql
+  include common::db::postgresql
+
   include php::php
-  include db::db
+
   include misc::misc
 
   package { "ant": }
