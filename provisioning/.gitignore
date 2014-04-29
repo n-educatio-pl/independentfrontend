@@ -1,0 +1,10 @@
+# Puppet & Vagrant
+/.vagrant
+/.librarian/
+/.tmp/
+
+#IDEs
+/.idea/
+
+#OSes
+.DS_Store
