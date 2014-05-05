@@ -10,7 +10,8 @@ class spring::java::java {
     require => Package["tomcat7"],
   }
   file { "/etc/tomcat7/tomcat-users.xml":
-    source => '/vagrant/manifests/modules/spring/manifests/java/tomcat-users.xml',
+    ensure => file,
+    content => template('spring/tomcat-users.xml.erb'),
     require => Package["tomcat7"],
     notify => Service["tomcat7"],
   }
