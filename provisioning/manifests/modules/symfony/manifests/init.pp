@@ -6,6 +6,8 @@ class symfony {
 
   include misc::misc
 
-  package { "ant": }
-
+  package { "openjdk-7-jdk": }
+  package { "ant":
+    require => Package["openjdk-7-jdk"],
+  }
 }
