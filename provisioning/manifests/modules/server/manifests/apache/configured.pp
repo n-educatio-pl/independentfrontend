@@ -42,6 +42,10 @@ class server::apache::configured {
   }
   # enable mod rewrite for apache if not enabled
   apache::loadmodule { "rewrite": }
+  # enables to add any header to responses
+  apache::loadmodule { "headers": }
+  # enables to add Expired header to responses
+  apache::loadmodule { "expires": }
   group {'www-data':
           ensure => present,
   }
